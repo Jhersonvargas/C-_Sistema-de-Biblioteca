@@ -1,0 +1,76 @@
+create procedure insertar_libros
+
+@idlibro varchar(20),
+@titulolibro varchar(150),
+@editorial varchar(50),
+@pais varchar(20),
+@año int,
+@nPag int,
+@existencia int
+as
+
+insert into LIBROS(idlibro,titulolibro,editorial,pais,año,nPag,existencia)
+values (@idlibro,@titulolibro,@editorial,@pais,@año,@nPag,@existencia)
+set @idlibro=@@IDENTITY
+
+EXECUTE insertar_libros 'A006','Planetas','Navarrate','Peru','2023','5','1'
+select * from LIBROS
+go
+------------------------------------------------------------------------------------------------------
+
+create procedure Actualizar
+
+@idlibro varchar(20),
+@titulolibro varchar(150),
+@editorial varchar(50),
+@pais varchar(20),
+@año int,
+@nPag int,
+@existencia int
+as
+
+update libros
+set
+titulolibro=@titulolibro,
+editorial=@editorial,
+pais=@pais,
+año=@año,
+nPag=@nPag,
+existencia=@existencia
+where idlibro=@idlibro
+
+EXECUTE Actualizar 'A006','Planetas','Navarrate','Peru','2023','40','7'
+select * from LIBROS
+go
+--------------------------------------------------------------------------------------------------------
+
+
+create procedure Elimina_Libros
+@idlibro varchar(20)
+as
+delete from libros where idlibro=@idlibro
+go
+
+EXECUTE Elimina_Libros 'A006'
+select * from LIBROS
+go
+----------------------------------------------------------------------------------------------------
+
+
+create procedure listar_libros
+as
+select * from libros
+go
+EXECUTE listar_libros 
+go
+--------------------------------------------------------------------------------------------------------
+
+
+create procedure Consultar_Libros_Idlibros
+@idlibro varchar(20)
+as
+select * from libros where idlibro=@idlibro
+go
+EXECUTE Consultar_Libros_Idlibros 'A005'
+go
+----------------------------------------------------------------------------------------
