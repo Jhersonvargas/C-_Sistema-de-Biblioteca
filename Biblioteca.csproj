@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5F2C6600-06CB-477C-A3A4-3D27742C4515}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Biblioteca</RootNamespace>
+    <AssemblyName>Biblioteca</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Buscar Prestamo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Buscar Prestamo.Designer.cs">
+      <DependentUpon>Buscar Prestamo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capa Datos\CLSConexion.cs" />
+    <Compile Include="Capa Datos\Metodo_Acceso.cs" />
+    <Compile Include="Capa Datos\Metodo_Autor.cs" />
+    <Compile Include="Capa Datos\Metodo_libros.cs" />
+    <Compile Include="Capa Datos\Metodo_Libro_Autor.cs" />
+    <Compile Include="Capa Datos\Metodo_Prestamo.cs" />
+    <Compile Include="Capa Logica\ClsAutor.cs" />
+    <Compile Include="Capa Logica\CLsLibros.cs" />
+    <Compile Include="Capa Logica\ClsLibros_Autor.cs" />
+    <Compile Include="Capa Logica\ClsPrestamo.cs" />
+    <Compile Include="Capa Presentacion\ClsAcceso.cs" />
+    <Compile Include="Consultar Libros Por Año.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultar Libros Por Año.Designer.cs">
+      <DependentUpon>Consultar Libros Por Año.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultar.Designer.cs">
+      <DependentUpon>Consultar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prestamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prestamos.Designer.cs">
+      <DependentUpon>Prestamos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarLibros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrarLibros.Designer.cs">
+      <DependentUpon>RegistrarLibros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarNuuevoActor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrarNuuevoActor.Designer.cs">
+      <DependentUpon>RegistrarNuuevoActor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Acceso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Acceso.Designer.cs">
+      <DependentUpon>Acceso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Biblioteca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Biblioteca.Designer.cs">
+      <DependentUpon>Biblioteca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reporte formulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporte formulario.Designer.cs">
+      <DependentUpon>Reporte formulario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte libros autor.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reporte libros autor.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReporteLibrosAñoResultado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteLibrosAñoResultado.Designer.cs">
+      <DependentUpon>ReporteLibrosAñoResultado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteLibros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteLibros.Designer.cs">
+      <DependentUpon>ReporteLibros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteLibrosAño.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteLibrosAño.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="Buscar Prestamo.resx">
+      <DependentUpon>Buscar Prestamo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultar Libros Por Año.resx">
+      <DependentUpon>Consultar Libros Por Año.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultar.resx">
+      <DependentUpon>Consultar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prestamos.resx">
+      <DependentUpon>Prestamos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistrarLibros.resx">
+      <DependentUpon>RegistrarLibros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistrarNuuevoActor.resx">
+      <DependentUpon>RegistrarNuuevoActor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Acceso.resx">
+      <DependentUpon>Acceso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Biblioteca.resx">
+      <DependentUpon>Biblioteca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Reporte formulario.resx">
+      <DependentUpon>Reporte formulario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte libros autor.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Reporte libros autor.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteLibrosAñoResultado.resx">
+      <DependentUpon>ReporteLibrosAñoResultado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteLibros.resx">
+      <DependentUpon>ReporteLibros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteLibrosAño.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteLibrosAño.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1486485588-add-create-new-math-sign-cross-plus_81186.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\databaseuntil_basededato_12919.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\generatetables_ok_home_out_edit_generar_1491.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xmag_search_find_export_locate_5984.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Open-folder-add_36742.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new_file_21047.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\business_application_addmale_useradd_insert_add_user_client_2312.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xmag_search_find_export_locate_5984 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_refresh_15732.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login-square-arrow-button-outline_icon-icons.com_732201.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login-square-arrow-button-outline_icon-icons.com_73220.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xmag_search_find_export_locate_59841.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loupe_78956.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loupe_789561.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_icon-icons.com_57997.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\40_104848.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print_102332.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar_day_month_date_year_schedule_icon_175594.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
